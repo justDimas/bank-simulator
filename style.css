@@ -1,0 +1,246 @@
+*, *::after, *::before{
+	box-sizing: border-box;
+}
+
+:root{
+	--text-color: rgb(0, 0, 0);
+	--action-shadow: rgb(0, 0, 0);
+	--login-control-border: rgb(255, 120, 132);
+	--controls-background: rgb(255, 255, 255);
+	--info-background: rgba(159, 250, 255, 0.8);
+	--transfer-background: rgba(223, 10, 212, 1);
+	--loan-background: rgba(94, 255, 112, 1);
+	--remover-background: rgba(125, 54, 223, 1);
+}
+
+body{
+	font-size: 18px;
+	font-family: 'Times New Roman', Times, serif;
+	letter-spacing: 0.5px;
+	color: var(--text-color);
+}
+
+body, h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+input{
+	text-align: center;
+	color: inherit;
+	font-family: inherit;
+	font-size: inherit;
+	border: 1px solid transparent;
+	border-radius: 10px;
+	outline: 0;
+	max-width: 80px;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+input[type='number'],
+input[type="number"]:hover,
+input[type="number"]:focus {
+    appearance: none;
+    -moz-appearance: textfield;
+}
+
+button{
+	font-family: inherit;
+	font-weight: inherit;
+	font-size: inherit;
+	color: inherit;
+	cursor: pointer;
+	background-color: white;
+	border: 1px solid transparent;
+	border-radius: 10px;
+	outline: 0;
+}
+
+time{
+	font-size: 0.7em;
+	font-weight: 600;
+}
+
+a{
+	text-decoration: none;
+}
+
+a:active, a:visited{
+	color: var(--text-color);
+}
+
+.wrapper{
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(to right, lightblue, lightgreen);
+	background-size: cover;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-width: min-content;
+}
+
+.box{
+	padding: 10px;
+	border-radius: 20px;
+	box-shadow: 0 0 5px var(--action-shadow);
+}
+
+.box__inner{
+	display: flex;
+	gap: 10px;
+}
+
+.box_transparent{
+	background-color: transparent;
+}
+
+.box_light-blue{
+	background-color: var(--info-background);
+}
+
+.box_violet{
+	background-color: var(--transfer-background);
+}
+
+.box_green{
+	background-color: var(--loan-background);
+}
+
+.box_purple{
+	background-color: var(--remover-background);
+}
+
+.login{
+	width: max-content;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 10px;
+}
+
+.login__number{
+	border: 1px solid var(--login-control-border);
+	width: 90px;
+}
+
+.login__pin{
+	border: 1px solid var(--login-control-border);
+	width: 50px;
+}
+
+.login__pin:focus-visible, .login__account:focus-visible{
+	border: 1px dashed var(--login-control-border);
+}
+
+
+.login__submit{
+	border: 1px solid var(--login-control-border);
+	padding: 5px 10px;
+}
+
+.login__submit:hover, .login__submit:focus-visible{
+	border: 1px dashed var(--login-control-border);
+}
+
+.login__submit:active{
+	border: 1px solid var(--login-control-border);
+}
+
+.greetings{
+	position: absolute;	
+	top: 10px;
+	left: 10px;
+	right: 10px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.greetings__logout{
+	background-color: red;
+	padding: 10px 20px;
+	border-radius: 10px;
+}
+
+.actions{
+	display: grid;
+	grid-template: repeat(3, 1fr) / repeat(2, max-content);
+	gap: 10px;
+
+}
+
+.actions__submit{
+	align-self: baseline;
+}
+
+.label_underline{
+	width: min-content;
+}
+
+.balance__container{
+	margin: 0 20px;
+	padding: 10px 0;
+}
+
+.balance__title{
+	display: inline;
+}
+
+.balance__date{
+	display: block;
+}
+
+.balance__sum{
+	float: right;
+	font-size: 28px;
+	font-weight: 600;
+}
+
+.info{
+	grid-row: 1 / 4;
+	height: 288px;
+}
+
+.info__container{
+	height: 100%;
+	overflow: auto;
+}
+
+.info__transaction{
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 1px solid black;
+	border-radius: 5px;
+	padding: 5px 10px;
+	gap: 20px;
+}
+
+.info__date{
+	align-self: center;
+}
+
+.info__type_red{
+	color:red;
+}
+.info__type_blue{
+	color:blue;
+}
+
+.results__container{
+	margin: 0 20px;
+	padding: 10px 0;;
+}
+
+.results__deposit{
+	color:blue;
+}
+.results__withdrawal{
+	color:red;
+}
+
+.hidden{
+	display: none;
+}

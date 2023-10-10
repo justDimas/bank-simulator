@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Bank</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="controls.css">
+</head>
+<body>
+	<div class="wrapper">
+			<form class="login box box_transparent" name="login" action="/" novalidate>
+				<h2>Вход в аккаунт</h2>
+				Счет
+				<input class="login__number input" name="number" type="text" minlength="7" maxlength='7' placeholder="-------" required>
+				Пароль
+				<input class="login__pin input" name="pin" type="password" minlength="4" maxlength="4" placeholder="----" required>
+				<button class="login__submit">Вход</button>
+			</form>
+
+			<main class="account hidden">
+				<header class="greetings">
+						<h2>Добро пожаловать, <span class="greetings__username"></span></h2>
+						<button class="greetings__logout" type="button">Выход</button>
+				</header>
+
+				<div class="balance">
+					<div class="balance__container">
+						<h4 class="balance__title">Текущий баланс на</h4>
+						<span class="balance__sum"></span>
+						<time class="balance__date"></time>
+					</div>
+				</div>
+				
+				<div class="actions">
+					<div class="info box box_light-blue">
+						<div class="info__container"></div>
+					</div>
+					<form class="transfer box box_violet" name="transfer" action="/" novalidate>
+						<h3 class="transfer__title">Перевести деньги</h3>
+						<div class="box__inner">
+							<label class="label_underline"><input class="transfer__number input" name="number" minlength="7" maxlength='7' placeholder="-------" required>Получатель</label>
+							<label class="label_underline"><input class="tarnsfer__sum input" name="sum" type="number" min="0" max="10000" placeholder="0.0" required>Сумма</label>
+							<button class="transfer__submit actions__submit">=></button>
+						</div>
+					</form>
+					<form class="loan box box_green"  name="loan" action="/" novalidate>
+						<h3 class="loan__title">Запросить займ</h3>
+						<div class="box__inner">
+							<label class="label_underline"><input class="loan__sum input" name="sum" type="number" min="0" max="10000" placeholder="0.0" required>Сумма</label>
+							<button class="loan__submit actions__submit">=></button>
+						</div>
+					</form>
+					<form class="remover box box_purple" name="remover" action="/" novalidate>
+						<h3 class="remover__title">Закрыть счёт</h3>
+						<div class="box__inner">
+							<label class="label_underline"><input class="remover__pin input" name="pin" type="password" minlength="4" maxlength='4' placeholder="----" required>Пин</label>
+							<button class="remover__submit actions__submit">=></button>
+						</div>
+					</form>
+				</div>
+				<div class="results">
+					<div class="results__container">
+						Получение: <span class="results__deposit"></span>
+						<br>
+						Вывод: <span class="results__withdrawal"></span>
+					</div>
+				</div>
+			</main>
+	</div>
+	<script src="script.js"></script>
+</body>
+</html>
